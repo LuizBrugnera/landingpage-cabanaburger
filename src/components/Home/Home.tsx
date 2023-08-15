@@ -25,12 +25,13 @@ const Home = () => {
           <S.HomeTitle>Cabana Hamburger</S.HomeTitle>
           <S.HomeText>
             Bem-vindo à Cabana Burger, o paraíso dos amantes de hambúrgueres em
-            David Canabarro e arredores! Localizada no coração da cidade, a
-            Cabana Burger se tornou rapidamente o destino favorito para quem
-            busca uma experiência gastronômica única e saborosa. Com uma
-            variedade de deliciosos hambúrgueres artesanais, este
-            estabelecimento conquistou o paladar de todos aqueles que buscam uma
-            combinação perfeita entre qualidade e sabor.
+            David Canabarro e arredores! Localizada na Rua Agenor F. de Oiveira
+            604 ao lado da APAE, a Cabana Burger se tornou rapidamente o destino
+            favorito para quem busca uma experiência gastronômica única e
+            saborosa. Com uma variedade de deliciosos hambúrgueres artesanais,
+            este estabelecimento conquistou o paladar de todos aqueles que
+            buscam uma combinação perfeita entre qualidade e sabor. <br />
+            Trabalhamos com Delivery e Eventos Privados.
           </S.HomeText>
           <BurgerList
             burgerList={burgerList}
