@@ -26,16 +26,11 @@ const BurgerList = ({
   setBurgerList,
   isScreenSmall,
 }: BurgerListProps) => {
-  const clearBurgerList = () => {
-    return burgerList.map((burger) => ({ ...burger, selected: false }));
-  };
-
   const handleBurgerClick = (clickedBurger: Burger) => {
-    const updatedBurgerList = clearBurgerList();
-    const updatedBurgerListWithSelection = updatedBurgerList.map((burger) =>
+    const updatedBurgerListWithSelection = burgerList.map((burger) =>
       burger.index === clickedBurger.index
         ? { ...burger, selected: true }
-        : burger
+        : { ...burger, selected: false }
     );
 
     setBurgerList(updatedBurgerListWithSelection);
@@ -44,17 +39,16 @@ const BurgerList = ({
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      const updatedBurgerList = clearBurgerList();
-      setBurgerList(updatedBurgerList);
-
       const nextIndex =
         selectedBurger.index + 1 < burgerList.length
           ? selectedBurger.index + 1
           : 0;
       setSelectedBurger(burgerList[nextIndex]);
 
-      const updatedBurgerListWithSelection = updatedBurgerList.map((burger) =>
-        burger.index === nextIndex ? { ...burger, selected: true } : burger
+      const updatedBurgerListWithSelection = burgerList.map((burger) =>
+        burger.index === nextIndex
+          ? { ...burger, selected: true }
+          : { ...burger, selected: false }
       );
       setBurgerList(updatedBurgerListWithSelection);
     }, 5000);
@@ -62,13 +56,7 @@ const BurgerList = ({
     return () => {
       clearInterval(interval);
     };
-  }, [
-    selectedBurger,
-    burgerList,
-    setSelectedBurger,
-    setBurgerList,
-    clearBurgerList,
-  ]);
+  }, [selectedBurger, burgerList, setSelectedBurger, setBurgerList]);
   return (
     <>
       <S.BurgerList>

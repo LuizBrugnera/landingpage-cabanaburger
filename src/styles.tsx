@@ -7,6 +7,8 @@ export const theme = {
     background: "#FFFFFF",
     backgroundNav: "black",
     navColor: "#FFFFFF",
+    backgroundMenu: "black",
+    menuColor: "#FFFFFF",
   },
 };
 
@@ -38,7 +40,7 @@ export const Nav = styled.nav`
   height: 15vh;
   margin-bottom: 10vh;
   background-color: ${theme.colors.backgroundNav};
-
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
   @media (max-width: 800px) {
     justify-content: center;
   }
@@ -157,6 +159,7 @@ export const BurgerListItem = styled.li`
   color: ${theme.colors.primary};
   min-width: 150px;
   cursor: pointer;
+  text-align: center;
   transition: opacity 0.5s ease-in-out;
   &:hover {
     color: ${theme.colors.secondary};
@@ -193,6 +196,7 @@ export const BurgerListItemSelectioned = styled.li`
   color: transparent;
   min-width: 150px;
   cursor: pointer;
+  text-align: center;
   transition: opacity 0.5s ease-in-out;
 
   @media (max-width: 990px) {
@@ -217,6 +221,7 @@ export const ImageHome = styled.img`
   border-radius: 20%;
   margin: 0 auto;
   transition: opacity 0.5s ease-in-out;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
   @media (max-width: 768px) {
     height: 20rem;
     width: 20rem;
@@ -239,9 +244,12 @@ export const MenuContainer = styled.div`
   margin: 50px auto;
   text-align: center;
   border: 1px solid ${theme.colors.primary};
-  color: ${theme.colors.primary};
+  color: ${theme.colors.menuColor};
   border-radius: 20px;
   font-size: 1.6rem;
+  font-weight: 600;
+  background-image: linear-gradient(to bottom, #0f0101, #000000, #0f0101);
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 768px) {
     width: 70%;
@@ -255,4 +263,19 @@ export const ImageMenu = styled.img`
   border-radius: 20%;
   margin: 0 auto;
   transition: opacity 0.5s ease-in-out;
+`;
+
+export const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  margin-top: 20vh;
+  background-color: ${theme.colors.backgroundNav};
+  color: ${theme.colors.navColor};
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.5);
 `;
