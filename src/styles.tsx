@@ -43,6 +43,7 @@ export const Nav = styled.nav`
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
   @media (max-width: 980px) {
     padding: 0 2em;
+    height: 18vh;
   }
 `;
 
