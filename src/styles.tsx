@@ -41,7 +41,7 @@ export const Nav = styled.nav`
   margin-bottom: 10vh;
   background-color: ${theme.colors.backgroundNav};
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
-  @media (max-width: 800px) {
+  @media (max-width: 980px) {
     justify-content: center;
   }
 `;
@@ -65,13 +65,21 @@ export const NavList = styled.ul`
 
 export const NavItem = styled.li`
   display: inline-block;
-  margin-left: 1.8rem;
+  margin: 0px 0.9rem;
   font-size: 1.6rem;
   font-weight: 600;
   color: ${theme.colors.navColor};
   cursor: pointer;
   &:hover {
     color: ${theme.colors.secondary};
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 1rem;
   }
 `;
 
@@ -278,4 +286,22 @@ export const Footer = styled.footer`
   font-weight: 600;
   text-align: center;
   box-shadow: 10px 0 10px 5px rgba(0, 0, 0, 0.5);
+`;
+
+export const TextMenu = styled.p`
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: ${theme.colors.menuColor};
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 0.7rem;
+  }
 `;

@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isScreenSmall, setIsScreenSmall] = React.useState(false);
 
   const checkScreenSize = () => {
-    setIsScreenSmall(window.innerWidth < 800);
+    setIsScreenSmall(window.innerWidth < 980);
   };
 
   React.useEffect(() => {
@@ -36,6 +36,15 @@ const Navbar = () => {
             rel="noreferrer"
           >
             Fazer Pedido
+          </a>
+        </S.NavItem>
+        <S.NavItem>
+          <a
+            href="https://www.instagram.com/cabanahamburguer/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Instagram
           </a>
         </S.NavItem>
       </S.NavList>

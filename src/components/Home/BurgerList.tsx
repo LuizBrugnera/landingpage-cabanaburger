@@ -8,7 +8,7 @@ export interface Burger {
   price: string;
   src: string;
   ingredients: string[];
-  extras?: string[];
+  extra?: string[];
 }
 
 interface BurgerListProps {
@@ -81,11 +81,11 @@ const BurgerList = ({
           {selectedBurger.name} - {selectedBurger.price}
         </p>
         <p>Ingredientes</p>
-        <p>{selectedBurger.ingredients.join(", ")}</p>
-        {selectedBurger.extras && (
+        <S.TextMenu>{selectedBurger.ingredients.join(", ")}</S.TextMenu>
+        {selectedBurger.extra && (
           <>
             <p>Extras</p>
-            <p>{selectedBurger.extras.join(", ")}</p>
+            <S.TextMenu>{selectedBurger.extra.join(", ")}</S.TextMenu>
           </>
         )}
         {isScreenSmall && <S.ImageMenu src={selectedBurger.src}></S.ImageMenu>}
