@@ -6,11 +6,22 @@ import BurgerList from "./BurgerList";
 const Home = () => {
   const [burgerList, setBurgerList] = React.useState([...BurgerData]);
   const [selectedBurger, setSelectedBurger] = React.useState(burgerList[0]);
+  const [isScreenSmall, setIsScreenSmall] = React.useState(false);
 
+  const checkScreenSize = () => {
+    setIsScreenSmall(window.innerWidth < 1615);
+  };
+
+  React.useEffect(() => {
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
   return (
     <S.HomeContainer>
       <S.FlexContainer>
-        <S.BackgroundBlack>
+        <S.Background>
           <S.HomeTitle>Cabana Hamburger</S.HomeTitle>
           <S.HomeText>
             Bem-vindo à Cabana Burger, o paraíso dos amantes de hambúrgueres em
@@ -26,9 +37,10 @@ const Home = () => {
             setSelectedBurger={setSelectedBurger}
             selectedBurger={selectedBurger}
             setBurgerList={setBurgerList}
+            isScreenSmall={isScreenSmall}
           />
-        </S.BackgroundBlack>
-        <S.ImageHome src={selectedBurger.src}></S.ImageHome>
+        </S.Background>
+        {!isScreenSmall && <S.ImageHome src={selectedBurger.src}></S.ImageHome>}
       </S.FlexContainer>
     </S.HomeContainer>
   );

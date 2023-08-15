@@ -8,6 +8,7 @@ export interface Burger {
   price: string;
   src: string;
   ingredients: string[];
+  extras?: string[];
 }
 
 interface BurgerListProps {
@@ -15,6 +16,7 @@ interface BurgerListProps {
   setSelectedBurger: (burger: Burger) => void;
   setBurgerList: (burgerlist: Burger[]) => void;
   selectedBurger: Burger;
+  isScreenSmall: boolean;
 }
 
 const BurgerList = ({
@@ -22,6 +24,7 @@ const BurgerList = ({
   setSelectedBurger,
   selectedBurger,
   setBurgerList,
+  isScreenSmall,
 }: BurgerListProps) => {
   const clearBurgerList = () => {
     return burgerList.map((burger) => ({ ...burger, selected: false }));
@@ -54,7 +57,7 @@ const BurgerList = ({
         burger.index === nextIndex ? { ...burger, selected: true } : burger
       );
       setBurgerList(updatedBurgerListWithSelection);
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -67,22 +70,39 @@ const BurgerList = ({
     clearBurgerList,
   ]);
   return (
-    <S.BurgerList>
-      {burgerList.map((burger) =>
-        burger.selected ? (
-          <S.BurgerListItemSelectioned key={burger.index}>
-            {burger.name}
-          </S.BurgerListItemSelectioned>
-        ) : (
-          <S.BurgerListItem
-            key={burger.index}
-            onClick={() => handleBurgerClick(burger)}
-          >
-            {burger.name}
-          </S.BurgerListItem>
-        )
-      )}
-    </S.BurgerList>
+    <>
+      <S.BurgerList>
+        {burgerList.map((burger) =>
+          burger.selected ? (
+            <S.BurgerListItemSelectioned key={burger.index}>
+              {burger.name}
+            </S.BurgerListItemSelectioned>
+          ) : (
+            <S.BurgerListItem
+              key={burger.index}
+              onClick={() => handleBurgerClick(burger)}
+            >
+              {burger.name}
+            </S.BurgerListItem>
+          )
+        )}
+      </S.BurgerList>
+
+      <S.MenuContainer>
+        <p>
+          {selectedBurger.name} - {selectedBurger.price}
+        </p>
+        <p>Ingredientes</p>
+        <p>{selectedBurger.ingredients.join(", ")}</p>
+        {selectedBurger.extras && (
+          <>
+            <p>Extras</p>
+            <p>{selectedBurger.extras.join(", ")}</p>
+          </>
+        )}
+        {isScreenSmall && <S.ImageMenu src={selectedBurger.src}></S.ImageMenu>}
+      </S.MenuContainer>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-import backgroundLogo from "./assets/background/backgroundlogo.png";
+
 export const theme = {
   colors: {
     primary: "#333131",
@@ -38,6 +38,10 @@ export const Nav = styled.nav`
   height: 15vh;
   margin-bottom: 10vh;
   background-color: ${theme.colors.backgroundNav};
+
+  @media (max-width: 800px) {
+    justify-content: center;
+  }
 `;
 
 export const MainLogo = styled.img`
@@ -51,6 +55,10 @@ export const NavList = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
+
+  @media (max-width: 800px) {
+    gap: 2rem;
+  }
 `;
 
 export const NavItem = styled.li`
@@ -79,6 +87,7 @@ export const HomeContainer = styled.div`
 
 export const FlexContainer = styled.div`
   display: flex;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 0 7rem;
@@ -88,6 +97,11 @@ export const FlexContainer = styled.div`
     justify-content: center;
     gap: 5rem;
     flex-direction: column;
+  }
+
+  @media (max-width: 990px) {
+    align-items: normal;
+    padding: 0 2rem;
   }
 `;
 
@@ -141,13 +155,26 @@ export const BurgerListItem = styled.li`
   font-size: 1.6rem;
   font-weight: 600;
   color: ${theme.colors.primary};
+  min-width: 150px;
   cursor: pointer;
   transition: opacity 0.5s ease-in-out;
   &:hover {
     color: ${theme.colors.secondary};
   }
-  @media (max-width: 768px) {
+
+  @media (max-width: 990px) {
     font-size: 1.2rem;
+    align-items: normal;
+    padding: 0 2rem;
+    margin-left: 1rem;
+    min-width: 90px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 1rem;
+    align-items: normal;
+    padding: 0 1rem;
+    min-width: 70px;
   }
 `;
 
@@ -164,16 +191,29 @@ export const BurgerListItemSelectioned = styled.li`
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
+  min-width: 150px;
   cursor: pointer;
   transition: opacity 0.5s ease-in-out;
-  @media (max-width: 768px) {
+
+  @media (max-width: 990px) {
     font-size: 1.2rem;
+    align-items: normal;
+    padding: 0 2rem;
+    margin-left: 1rem;
+    min-width: 90px;
+  }
+
+  @media (max-width: 550px) {
+    font-size: 1rem;
+    align-items: normal;
+    padding: 0 1rem;
+    min-width: 70px;
   }
 `;
 
 export const ImageHome = styled.img`
-  height: 630px;
-  width: 630px;
+  height: 628px;
+  width: 628px;
   border-radius: 20%;
   margin: 0 auto;
   transition: opacity 0.5s ease-in-out;
@@ -183,7 +223,36 @@ export const ImageHome = styled.img`
   }
 `;
 
-export const BackgroundBlack = styled.div`
+export const Background = styled.div`
   background-color: ${theme.colors.background};
   padding: 2 0rem;
+`;
+
+export const MenuContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 400px;
+  width: 60%;
+  padding: 30px 30px;
+  margin: 50px auto;
+  text-align: center;
+  border: 1px solid ${theme.colors.primary};
+  color: ${theme.colors.primary};
+  border-radius: 20px;
+  font-size: 1.6rem;
+
+  @media (max-width: 768px) {
+    width: 70%;
+    font-size: 1.2rem;
+  }
+`;
+
+export const ImageMenu = styled.img`
+  height: 70%;
+  width: 70%;
+  border-radius: 20%;
+  margin: 0 auto;
+  transition: opacity 0.5s ease-in-out;
 `;
