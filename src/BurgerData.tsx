@@ -1,0 +1,83 @@
+import simpleBurger from "./assets/hamburgers/simples.jpeg";
+import cabanaBurger from "./assets/hamburgers/cabanaburger.jpeg";
+import comboCabana from "./assets/hamburgers/combocabana.jpeg";
+import smashBurger from "./assets/hamburgers/smash.jpeg";
+
+export const BurgerData = [
+  {
+    index: 0,
+    selected: false,
+    name: "Simples",
+    price: "R$27.00",
+    src: simpleBurger,
+    ingredients: [
+      "Pão com brioche selado na manteiga",
+      "Hambúrguer de carne bovina 150g",
+      "Queijo Cheddar",
+      "Queijo Mussarela",
+      "Alface",
+      "Rúcula",
+      "Tomate",
+      "Molho especial",
+      "Bacon",
+      "Cebola Caramelizada",
+    ],
+  },
+  {
+    index: 1,
+    selected: false,
+    name: "Cabana Burger",
+    price: "R$27.00",
+    src: cabanaBurger,
+    ingredients: [
+      "Pão com brioche selado na manteiga",
+      "Hambúrguer de carne bovina 150g",
+      "Queijo Cheddar",
+      "Queijo Mussarela",
+      "Alface",
+      "Rúcula",
+      "Tomate",
+      "Molho especial",
+      "Bacon",
+      "Cebola Caramelizada",
+    ],
+  },
+  {
+    index: 2,
+    selected: false,
+    name: "Combo Cabana",
+    price: "R$27.00",
+    src: comboCabana,
+    ingredients: [
+      "Pão com brioche selado na manteiga",
+      "Hambúrguer de carne bovina 150g",
+      "Queijo Cheddar",
+      "Queijo Mussarela",
+      "Alface",
+      "Rúcula",
+      "Tomate",
+      "Molho especial",
+      "Bacon",
+      "Cebola Caramelizada",
+    ],
+  },
+  {
+    index: 3,
+    selected: false,
+    name: "Smash Burger",
+    price: "R$27.00",
+    src: smashBurger,
+    ingredients: [
+      "Pão com brioche selado na manteiga",
+      "Hambúrguer de carne bovina 150g",
+      "Queijo Cheddar",
+      "Queijo Mussarela",
+      "Alface",
+      "Rúcula",
+      "Tomate",
+      "Molho especial",
+      "Bacon",
+      "Cebola Caramelizada",
+    ],
+  },
+];

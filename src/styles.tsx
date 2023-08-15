@@ -69,7 +69,7 @@ export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 85vh;
+  min-height: 85vh;
   width: 100%;
 
   @media (max-width: 615px) {
@@ -124,11 +124,59 @@ export const HomeText = styled.p`
   }
 `;
 
+export const BurgerList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  padding: 0 7rem;
+  text-align: start;
+`;
+
+export const BurgerListItem = styled.li`
+  display: inline-block;
+  margin-left: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${theme.colors.primary};
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  &:hover {
+    color: ${theme.colors.secondary};
+  }
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const BurgerListItemSelectioned = styled.li`
+  display: inline-block;
+  margin-left: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background: -webkit-radial-gradient(circle, #800000, #ffa600e1);
+  background: -moz-radial-gradient(circle, #800000, #ffa600e1);
+  background: -o-radial-gradient(circle, #800000, #ffa600e1);
+  background: radial-gradient(circle, #800000, #ffa600e1);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
 export const ImageHome = styled.img`
-  height: 80%;
-  width: auto;
+  height: 630px;
+  width: 630px;
   border-radius: 20%;
   margin: 0 auto;
+  transition: opacity 0.5s ease-in-out;
   @media (max-width: 768px) {
     height: 20rem;
     width: 20rem;

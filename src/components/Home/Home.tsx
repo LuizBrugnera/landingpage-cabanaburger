@@ -1,9 +1,12 @@
 import React from "react";
-import * as S from "../styles";
-
-import simples from "../assets/hamburgers/simples.jpeg";
+import * as S from "../../styles";
+import { BurgerData } from "../../BurgerData";
+import BurgerList from "./BurgerList";
 
 const Home = () => {
+  const [burgerList, setBurgerList] = React.useState([...BurgerData]);
+  const [selectedBurger, setSelectedBurger] = React.useState(burgerList[0]);
+
   return (
     <S.HomeContainer>
       <S.FlexContainer>
@@ -18,8 +21,14 @@ const Home = () => {
             estabelecimento conquistou o paladar de todos aqueles que buscam uma
             combinação perfeita entre qualidade e sabor.
           </S.HomeText>
+          <BurgerList
+            burgerList={burgerList}
+            setSelectedBurger={setSelectedBurger}
+            selectedBurger={selectedBurger}
+            setBurgerList={setBurgerList}
+          />
         </S.BackgroundBlack>
-        <S.ImageHome src={simples}></S.ImageHome>
+        <S.ImageHome src={selectedBurger.src}></S.ImageHome>
       </S.FlexContainer>
     </S.HomeContainer>
   );
