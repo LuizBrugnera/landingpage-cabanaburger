@@ -42,7 +42,7 @@ export const Nav = styled.nav`
   background-color: ${theme.colors.backgroundNav};
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
   @media (max-width: 980px) {
-    justify-content: center;
+    padding: 0 2em;
   }
 `;
 
@@ -81,6 +81,67 @@ export const NavItem = styled.li`
   @media (max-width: 400px) {
     font-size: 1rem;
   }
+`;
+
+export const MobileIcon = styled.div`
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  z-index: 5;
+`;
+
+export const MobileLine = styled.div`
+  width: 100%;
+  height: 4px;
+  background-color: #ffffff;
+  transition: all 0.2s;
+`;
+
+export const MobileNavList = styled.ul`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, #f7f3ec, #ffffff);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  z-index: 1;
+  padding: 20px 0px;
+  border-bottom: 1px solid #333;
+
+  list-style: none;
+`;
+
+export const MobileNavItem = styled.li`
+  min-width: 30%;
+  padding: 20px 30px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${theme.colors.primary};
+  min-width: 150px;
+  cursor: pointer;
+  padding &:hover {
+    border-bottom: 1px solid #333;
+    color: ${theme.colors.secondary};
+    transition: all 2s ease-in-out;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 1.2rem;
+  }
+`;
+
+export const MobileAncor = styled.a`
+  text-decoration: none;
+  color: ${theme.colors.primary};
+  padding: 1rem;
 `;
 
 export const HomeContainer = styled.div`
